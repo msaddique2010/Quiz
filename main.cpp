@@ -1,31 +1,35 @@
-// Write a program for a mechanic shop to calculate spare-parts bill. Read integer N for number of parts replaced. For each read price. If price > 1500 tag as Premium Part. Sum and print total. Use IO, variables, loops, if/else. 
+// Write a program to calculate tuition fees. Read N students and fee of each. If fee > 45000 mark as “High Tuition”. Print total and “High Tuition” count. 
 
 #include <iostream>
 using namespace std;
 
 int main() {
     int N;
-    cout << "Enter number of spare parts replaced: ";
+    cout << "Enter number of Students: ";
     cin >> N;
 
     if (N <= 0){
         cout << "Invalid Number";
         return 0;
     }
-    double price, total = 0;
+
+    double fee;
+    long long total = 0;
+    int highTuitionCount = 0;
 
     for (int i = 1; i <= N; i++) {
-        cout << "Enter price of part " << i << ": ";    
-        cin >> price;
+        cout << "Enter fee of student " << i << ": ";    
+        cin >> fee;
 
-        if (price > 1500) {
-            cout << "Premium Part" << endl;
+        if (fee > 45000 ) {
+            cout << "High Tuition" << endl;
+            highTuitionCount++;
         }
-        total += price;
-        
+        total += fee;
     }
     cout << "----------------------" << endl;
     cout << "Total Bill: " << total << endl;
+    cout << "Students with \"High Tution\" count are: " << highTuitionCount << endl;
     cout << "----------------------" << endl;
 
     return 0;
